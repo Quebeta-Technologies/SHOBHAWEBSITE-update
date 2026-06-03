@@ -40,7 +40,7 @@ export default function WhySobhaExpertise() {
           <div className="lg:col-span-5 relative lg:sticky lg:top-28">
             <div className="relative rounded-3xl overflow-hidden shadow-[0_30px_70px_rgba(7,56,166,0.18)] aspect-[4/5]">
               <img
-                src="/brand/whyshobha.png"
+                src="/brand/Experties.png"
                 alt="Shobha Healthcare — expertise & foundation"
                 className="w-full h-full object-cover"
                 onError={(e) => {
