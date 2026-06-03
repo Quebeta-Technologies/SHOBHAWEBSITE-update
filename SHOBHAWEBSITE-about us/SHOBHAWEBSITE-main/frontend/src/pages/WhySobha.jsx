@@ -22,13 +22,13 @@ export default function WhySobha() {
       <Header />
       <WhySobhaHero />
       <WhySobhaExpertise />
+      <WhySobhaVideo />
       {/* Section 2 — 6 Pillars (reused from home) */}
       <WhatSetsApart />
       <WhySobhaQuality />
       <WhySobhaIngredients />
       {/* Section 5 — Manufacturing Flowchart (reused from home) */}
       <QualityProcess />
-      <WhySobhaVideo />
       <WhySobhaCertifications />
       <Footer />
       <WhatsAppFloat />
