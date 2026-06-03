@@ -1,6 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Search, FlaskConical, FileCheck2, CheckCircle2 } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Search, FlaskConical, FileCheck2, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 
 const items = [
   {
@@ -34,6 +34,20 @@ const items = [
 ];
 
 export default function WhySobhaIngredients() {
+  const [active, setActive] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  const goTo = (index) => {
+    setDirection(index > active ? 1 : -1);
+    setActive(index);
+  };
+
+  const prev = () => { if (active > 0) goTo(active - 1); };
+  const next = () => { if (active < items.length - 1) goTo(active + 1); };
+
+  const current = items[active];
+  const Icon = current.icon;
+
   return (
     <section
       data-testid="whysobha-ingredients"
@@ -42,6 +56,7 @@ export default function WhySobhaIngredients() {
       <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full bg-[#0738A6]/[0.04] blur-3xl pointer-events-none" />
 
       <div className="container-x relative">
+        {/* Header */}
         <div className="max-w-3xl mb-12 md:mb-14">
           <span className="eyebrow">Ingredient Standards &amp; Purity</span>
           <h2 className="mt-4 font-display font-semibold text-[#12233D] text-2xl sm:text-3xl lg:text-[36px] tracking-tight leading-[1.15]">
@@ -57,55 +72,124 @@ export default function WhySobhaIngredients() {
           </p>
         </div>
 
-        <div className="space-y-4 max-w-5xl">
+        {/* Step indicators */}
+        <div className="flex items-center gap-3 mb-8">
           {items.map((it, i) => {
-            const Icon = it.icon;
+            const StepIcon = it.icon;
             return (
-              <motion.div
-                key={it.title}
-                data-testid={`ingredient-row-${i}`}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="card-hover relative bg-white border border-[#E9EEF5] rounded-2xl p-6 md:p-7 flex gap-5 md:gap-7 items-start overflow-hidden"
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className="flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 text-[12px] font-bold uppercase tracking-[0.15em]"
+                style={{
+                  borderColor: i === active ? it.color : "#E9EEF5",
+                  backgroundColor: i === active ? it.color : "transparent",
+                  color: i === active ? "#fff" : "#9CA3AF",
+                }}
               >
-                {/* Left color stripe */}
-                <div
-                  className="absolute top-0 left-0 bottom-0 w-1"
-                  style={{ background: it.color }}
-                />
-
-                <div
-                  className="shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center"
-                  style={{ background: it.bg }}
-                >
-                  <Icon
-                    className="w-7 h-7 md:w-8 md:h-8"
-                    style={{ color: it.color }}
-                  />
-                </div>
-
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span
-                      className="text-[10px] font-bold tracking-[0.22em] uppercase"
-                      style={{ color: it.color }}
-                    >
-                      Step 0{i + 1}
-                    </span>
-                    <span className="h-px flex-1 bg-[#E9EEF5]" />
-                  </div>
-                  <h3 className="font-display font-semibold text-[#12233D] text-[17px] md:text-[19px] leading-snug">
-                    {it.title}
-                  </h3>
-                  <p className="mt-2.5 text-[#4B5563] text-[14.5px] leading-relaxed">
-                    {it.desc}
-                  </p>
-                </div>
-              </motion.div>
+                <StepIcon className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Step 0{i + 1}</span>
+                <span className="sm:hidden">0{i + 1}</span>
+              </button>
             );
           })}
+        </div>
+
+        {/* Carousel card */}
+        <div className="relative overflow-hidden rounded-3xl border border-[#E9EEF5] bg-white shadow-[0_8px_40px_rgba(7,56,166,0.08)]">
+          {/* Progress bar */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-[#F1F5F9]">
+            <motion.div
+              className="h-full rounded-full"
+              style={{ backgroundColor: current.color }}
+              animate={{ width: `${((active + 1) / items.length) * 100}%` }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            />
+          </div>
+
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={active}
+              custom={direction}
+              initial={{ opacity: 0, x: direction * 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: direction * -60 }}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+              className="p-8 md:p-12 lg:p-14"
+            >
+              <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+                {/* Left: icon + step */}
+                <div className="flex flex-row lg:flex-col items-center lg:items-start gap-5 lg:gap-4 lg:w-48 shrink-0">
+                  <div
+                    className="w-20 h-20 md:w-24 md:h-24 rounded-3xl flex items-center justify-center shadow-lg"
+                    style={{ background: current.bg, border: `2px solid ${current.color}30` }}
+                  >
+                    <Icon className="w-10 h-10 md:w-12 md:h-12" style={{ color: current.color }} />
+                  </div>
+                  <div>
+                    <div
+                      className="text-[11px] font-bold tracking-[0.25em] uppercase mb-1"
+                      style={{ color: current.color }}
+                    >
+                      Step 0{active + 1} of {items.length}
+                    </div>
+                    <div className="flex gap-1.5 mt-2">
+                      {items.map((_, i) => (
+                        <div
+                          key={i}
+                          className="rounded-full transition-all duration-300"
+                          style={{
+                            width: i === active ? "20px" : "6px",
+                            height: "6px",
+                            backgroundColor: i === active ? current.color : "#E9EEF5",
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: content */}
+                <div className="flex-1">
+                  <h3
+                    className="font-display font-semibold text-[#12233D] text-[22px] md:text-[28px] leading-snug mb-5"
+                  >
+                    {current.title}
+                  </h3>
+                  <p className="text-[#4B5563] text-[15.5px] md:text-[16px] leading-relaxed">
+                    {current.desc}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Nav arrows */}
+          <div className="flex items-center justify-between px-8 md:px-12 lg:px-14 pb-8 md:pb-10">
+            <button
+              onClick={prev}
+              disabled={active === 0}
+              className="flex items-center gap-2 text-[13px] font-semibold transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
+              style={{ color: current.color }}
+            >
+              <ChevronLeft className="w-5 h-5" />
+              Previous
+            </button>
+
+            <span className="text-[12px] text-[#9CA3AF] font-medium">
+              {active + 1} / {items.length}
+            </span>
+
+            <button
+              onClick={next}
+              disabled={active === items.length - 1}
+              className="flex items-center gap-2 text-[13px] font-semibold transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
+              style={{ color: current.color }}
+            >
+              Next
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
