@@ -85,7 +85,7 @@ export default function WhySobhaHero() {
                   { v: "1 Day", l: "Response" },
                 ].map((s) => (
                   <div key={s.l} className="flex flex-col">
-                    <span className="font-display font-semibold text-white text-[36px] md:text-[44px] leading-none">
+                    <span className="font-display font-semibold text-white text-[26px] md:text-[32px] leading-none">
                       {s.v}
                     </span>
                     <span className="mt-2 text-[10.5px] font-bold tracking-[0.2em] uppercase text-white/60">
