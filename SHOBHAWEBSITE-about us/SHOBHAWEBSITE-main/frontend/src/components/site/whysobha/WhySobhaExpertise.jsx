@@ -51,25 +51,7 @@ export default function WhySobhaExpertise() {
             </div>
 
             {/* Floating chips */}
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55 }}
-              className="absolute -top-4 -left-3 md:-left-5 bg-white border border-[#E9EEF5] rounded-2xl px-4 py-3 shadow-xl flex items-center gap-2.5 animate-float-slow"
-            >
-              <div className="w-9 h-9 rounded-xl bg-[#F2C14E]/20 flex items-center justify-center">
-                <Briefcase className="w-4 h-4 text-[#9c7611]" />
-              </div>
-              <div>
-                <div className="text-[9px] uppercase tracking-widest text-[#4B5563] font-bold">
-                  Founded
-                </div>
-                <div className="text-[#12233D] font-display font-semibold text-[13px]">
-                  2025 · Dubai
-                </div>
-              </div>
-            </motion.div>
+            
 
             <motion.div
               initial={{ opacity: 0, x: 14 }}
