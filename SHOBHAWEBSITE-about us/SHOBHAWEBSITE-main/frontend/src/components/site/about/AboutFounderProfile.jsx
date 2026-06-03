@@ -191,8 +191,8 @@ export default function AboutFounderProfile() {
               to genuinely show up on the ground.
             </p>
 
-            {/* Quote 2 — highlight card */}
-            <div className="mt-9 rounded-2xl border border-white/15 bg-white/[0.04] backdrop-blur-sm p-6 md:p-7">
+            {/* Quote 2 — full width highlight card */}
+            <div className="mt-9 w-full rounded-2xl border border-white/15 bg-white/[0.04] backdrop-blur-sm p-6 md:p-7">
               <Quote className="w-6 h-6 text-[#62C7F5] mb-3" />
               <p className="text-white text-[16.5px] md:text-[18px] leading-relaxed font-display italic">
                 "What I care about most is that twenty years from now, there
@@ -204,12 +204,6 @@ export default function AboutFounderProfile() {
                 — Mr. Jagdish Maheshwari, Founder &amp; CEO
               </div>
             </div>
-
-            <p className="mt-9 text-white/70 text-[14.5px] leading-relaxed italic font-display">
-              Shobha Healthcare measures success by one thing — how many more
-              people got the medicine they needed because it was there, it was
-              reliable, and it was affordable.
-            </p>
           </motion.div>
         </div>
       </div>
