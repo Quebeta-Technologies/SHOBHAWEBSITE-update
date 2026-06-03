@@ -45,7 +45,7 @@ export default function Footer() {
       className="bg-[#12233D] text-[#E9EEF5] relative"
     >
       <div className="container-x py-12 grid lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-4">
+        <div className="lg:col-span-5">
           <div>
             <Logo className="h-12 w-auto brightness-0 invert" />
           </div>
@@ -56,36 +56,30 @@ export default function Footer() {
           </p>
 
           {/* Contact info — single horizontal line */}
-          <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px]">
-            <div className="flex items-center gap-2">
+          <div className="mt-7 flex items-center gap-4 text-[12.5px] text-white/80 flex-wrap">
+            <div className="flex items-center gap-1.5 whitespace-nowrap">
               <MapPin className="w-3.5 h-3.5 text-[#62C7F5] shrink-0" />
               <span>Dubai, UAE</span>
             </div>
             <span className="text-white/20">|</span>
-            <a
-              href="tel:+971585937521"
-              className="flex items-center gap-2 hover:text-white transition-colors"
-            >
+            <a href="tel:+971585937521" className="flex items-center gap-1.5 hover:text-white transition-colors whitespace-nowrap">
               <Phone className="w-3.5 h-3.5 text-[#62C7F5] shrink-0" />
               <span>+971 58 593 7521</span>
             </a>
             <span className="text-white/20">|</span>
-            <a
-              href="mailto:admin@shobha-healthcare.com"
-              className="flex items-center gap-2 hover:text-white transition-colors"
-            >
+            <a href="mailto:admin@shobha-healthcare.com" className="flex items-center gap-1.5 hover:text-white transition-colors whitespace-nowrap">
               <Mail className="w-3.5 h-3.5 text-[#62C7F5] shrink-0" />
               <span>admin@shobha-healthcare.com</span>
             </a>
             <span className="text-white/20">|</span>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 whitespace-nowrap">
               <Clock className="w-3.5 h-3.5 text-[#62C7F5] shrink-0" />
-              <span>Mon–Fri · 9 AM – 6 PM</span>
+              <span>Mon–Fri · 9–6 PM</span>
             </div>
           </div>
         </div>
 
-        <div className="lg:col-span-8 grid sm:grid-cols-3 gap-8">
+        <div className="lg:col-span-7 grid sm:grid-cols-3 gap-8">
           {groups.map((g) => (
             <div key={g.title}>
               <h4 className="text-[10px] font-bold tracking-[0.22em] uppercase text-[#62C7F5] mb-5">
