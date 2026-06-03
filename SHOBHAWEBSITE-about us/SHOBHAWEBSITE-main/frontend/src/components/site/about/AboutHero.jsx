@@ -59,12 +59,12 @@ export default function AboutHero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.25 }}
-            className="mt-10 lg:mt-0 lg:flex-shrink-0 flex flex-col lg:self-center"
+            className="mt-10 lg:mt-0 lg:flex-shrink-0 flex flex-col lg:h-full"
           >
             {/* Breadcrumb sits above the stats, right-aligned, vertically matched to eyebrow chip */}
             <nav
               aria-label="Breadcrumb"
-              className="flex items-center justify-end gap-1.5 text-[12px] text-white/65 mb-6 pt-[5px]"
+              className="flex items-center justify-end gap-1.5 text-[12px] text-white/65 mb-6 h-[30px]"
             >
               <Link to="/" className="hover:text-white transition-colors">
                 Home
@@ -73,7 +73,8 @@ export default function AboutHero() {
               <span className="text-white font-medium">About Us</span>
             </nav>
 
-            <div className="grid grid-cols-2 gap-x-10 gap-y-7">
+            <div className="flex-1 flex items-center">
+              <div className="grid grid-cols-2 gap-x-10 gap-y-7">
               {[
                 { v: "4", l: "Continents" },
                 { v: "15+", l: "Markets Served" },
@@ -89,6 +90,7 @@ export default function AboutHero() {
                   </span>
                 </div>
               ))}
+              </div>
             </div>
           </motion.div>
         </div>
