@@ -21,6 +21,7 @@ export default function WhySobha() {
     <div data-testid="whysobha-page" className="bg-white">
       <Header />
       <WhySobhaHero />
+      <WhySobhaVideo />
       <WhySobhaExpertise />
       {/* Section 2 — 6 Pillars (reused from home) */}
       <WhatSetsApart />
@@ -28,7 +29,6 @@ export default function WhySobha() {
       <WhySobhaIngredients />
       {/* Section 5 — Manufacturing Flowchart (reused from home) */}
       <QualityProcess />
-      <WhySobhaVideo />
       <WhySobhaCertifications />
       <Footer />
       <WhatsAppFloat />
