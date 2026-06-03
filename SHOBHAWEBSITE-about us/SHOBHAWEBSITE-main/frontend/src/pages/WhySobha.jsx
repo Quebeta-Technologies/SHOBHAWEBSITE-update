@@ -23,6 +23,7 @@ export default function WhySobha() {
       <WhySobhaHero />
       <WhySobhaVideo />
       <WhySobhaExpertise />
+      <WhySobhaVideo />
       {/* Section 2 — 6 Pillars (reused from home) */}
       <WhatSetsApart />
       <WhySobhaQuality />
