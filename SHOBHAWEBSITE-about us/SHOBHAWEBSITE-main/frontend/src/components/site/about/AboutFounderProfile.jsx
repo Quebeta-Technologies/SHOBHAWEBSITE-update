@@ -191,21 +191,66 @@ export default function AboutFounderProfile() {
               to genuinely show up on the ground.
             </p>
 
-            {/* Quote 2 — full width highlight card */}
-            <div className="mt-9 w-full rounded-2xl border border-white/15 bg-white/[0.04] backdrop-blur-sm p-6 md:p-7">
-              <Quote className="w-6 h-6 text-[#62C7F5] mb-3" />
-              <p className="text-white text-[16.5px] md:text-[18px] leading-relaxed font-display italic">
-                "What I care about most is that twenty years from now, there
-                are patients in Africa and Asia who got the right medicine
-                because Shobha Healthcare was there. That's the legacy I'm
-                building."
-              </p>
-              <div className="mt-4 text-[#62C7F5] text-[11.5px] font-bold uppercase tracking-[0.18em]">
-                — Mr. Jagdish Maheshwari, Founder &amp; CEO
-              </div>
-            </div>
           </motion.div>
         </div>
+
+        {/* Full-width quote banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mt-14 relative w-full rounded-3xl overflow-hidden"
+          style={{
+            background:
+              "linear-gradient(120deg, #0738A6 0%, #12233D 50%, #7A1F7A 100%)",
+          }}
+        >
+          {/* Decorative blobs */}
+          <div className="absolute -top-10 -left-10 w-64 h-64 rounded-full bg-[#62C7F5]/20 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-10 -right-10 w-64 h-64 rounded-full bg-[#F2C14E]/15 blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-[#9DCD4A]/10 blur-2xl pointer-events-none" />
+
+          {/* Border gradient overlay */}
+          <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none" />
+
+          <div className="relative px-8 py-10 md:px-14 md:py-12 flex flex-col md:flex-row md:items-center gap-8">
+            {/* Large decorative quote mark */}
+            <div
+              className="hidden md:flex flex-shrink-0 w-20 h-20 rounded-2xl items-center justify-center"
+              style={{ background: "rgba(98,199,245,0.12)" }}
+            >
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <text x="2" y="34" fontSize="42" fontFamily="Georgia, serif" fill="#62C7F5" opacity="0.9">"</text>
+              </svg>
+            </div>
+
+            {/* Quote text */}
+            <div className="flex-1">
+              <p
+                className="text-white text-[20px] md:text-[24px] lg:text-[28px] leading-[1.35] font-display font-semibold"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #ffffff 0%, #62C7F5 60%, #9DCD4A 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                "What I care about most is that twenty years from now, there are
+                patients in Africa and Asia who got the right medicine because
+                Shobha Healthcare was there. That's the legacy I'm building."
+              </p>
+
+              <div className="mt-5 flex items-center gap-3">
+                <div className="h-px w-8 bg-[#F2C14E]" />
+                <span className="text-[#F2C14E] text-[12px] font-bold uppercase tracking-[0.22em]">
+                  Mr. Jagdish Maheshwari, Founder &amp; CEO
+                </span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
