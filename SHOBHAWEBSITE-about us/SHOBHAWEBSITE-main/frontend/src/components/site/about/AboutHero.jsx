@@ -20,23 +20,8 @@ export default function AboutHero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#F2C14E]/10 blur-3xl pointer-events-none" />
 
       <div className="container-x relative">
-        {/* Breadcrumb — right-aligned */}
-        <motion.nav
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          aria-label="Breadcrumb"
-          className="flex items-center justify-end gap-1.5 text-[12px] text-white/65 pt-6 pb-4"
-        >
-          <Link to="/" className="hover:text-white transition-colors">
-            Home
-          </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-white/40" />
-          <span className="text-white font-medium">About Us</span>
-        </motion.nav>
-
         {/* Main content row: text left, stats right */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16 pb-10">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16 py-10">
           {/* Left: headline + subtext */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -44,12 +29,28 @@ export default function AboutHero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="flex-1 max-w-3xl"
           >
-            {/* Eyebrow chip */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-7">
-              <Sparkles className="w-3.5 h-3.5 text-[#F2C14E]" />
-              <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white/90">
-                About Shobha Healthcare
-              </span>
+            {/* Eyebrow chip + breadcrumb on same row */}
+            <div className="flex items-center justify-between mb-7">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
+                <Sparkles className="w-3.5 h-3.5 text-[#F2C14E]" />
+                <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white/90">
+                  About Shobha Healthcare
+                </span>
+              </div>
+
+              <motion.nav
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                aria-label="Breadcrumb"
+                className="flex items-center gap-1.5 text-[12px] text-white/65"
+              >
+                <Link to="/" className="hover:text-white transition-colors">
+                  Home
+                </Link>
+                <ChevronRight className="w-3.5 h-3.5 text-white/40" />
+                <span className="text-white font-medium">About Us</span>
+              </motion.nav>
             </div>
 
             {/* H1 */}
