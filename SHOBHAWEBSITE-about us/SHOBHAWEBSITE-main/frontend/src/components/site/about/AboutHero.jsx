@@ -29,28 +29,12 @@ export default function AboutHero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="flex-1 max-w-3xl"
           >
-            {/* Eyebrow chip + breadcrumb on same row */}
-            <div className="flex items-center justify-between mb-7">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
-                <Sparkles className="w-3.5 h-3.5 text-[#F2C14E]" />
-                <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white/90">
-                  About Shobha Healthcare
-                </span>
-              </div>
-
-              <motion.nav
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                aria-label="Breadcrumb"
-                className="flex items-center gap-1.5 text-[12px] text-white/65"
-              >
-                <Link to="/" className="hover:text-white transition-colors">
-                  Home
-                </Link>
-                <ChevronRight className="w-3.5 h-3.5 text-white/40" />
-                <span className="text-white font-medium">About Us</span>
-              </motion.nav>
+            {/* Eyebrow chip */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-7">
+              <Sparkles className="w-3.5 h-3.5 text-[#F2C14E]" />
+              <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white/90">
+                About Shobha Healthcare
+              </span>
             </div>
 
             {/* H1 */}
@@ -70,28 +54,42 @@ export default function AboutHero() {
             </p>
           </motion.div>
 
-          {/* Right: stat strip */}
+          {/* Right: breadcrumb + stat strip */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.25 }}
-            className="mt-10 lg:mt-0 lg:flex-shrink-0 grid grid-cols-2 gap-x-10 gap-y-7"
+            className="mt-10 lg:mt-0 lg:flex-shrink-0 flex flex-col"
           >
-            {[
-              { v: "4", l: "Continents" },
-              { v: "15+", l: "Markets Served" },
-              { v: "50+", l: "Products" },
-              { v: "20+", l: "Years" },
-            ].map((s) => (
-              <div key={s.l} className="flex flex-col">
-                <span className="font-display font-semibold text-white text-2xl md:text-[28px] leading-none">
-                  {s.v}
-                </span>
-                <span className="mt-2 text-[10.5px] font-bold tracking-[0.2em] uppercase text-white/60">
-                  {s.l}
-                </span>
-              </div>
-            ))}
+            {/* Breadcrumb sits above the stats, right-aligned */}
+            <nav
+              aria-label="Breadcrumb"
+              className="flex items-center justify-end gap-1.5 text-[12px] text-white/65 mb-6"
+            >
+              <Link to="/" className="hover:text-white transition-colors">
+                Home
+              </Link>
+              <ChevronRight className="w-3.5 h-3.5 text-white/40" />
+              <span className="text-white font-medium">About Us</span>
+            </nav>
+
+            <div className="grid grid-cols-2 gap-x-10 gap-y-7">
+              {[
+                { v: "4", l: "Continents" },
+                { v: "15+", l: "Markets Served" },
+                { v: "50+", l: "Products" },
+                { v: "20+", l: "Years" },
+              ].map((s) => (
+                <div key={s.l} className="flex flex-col">
+                  <span className="font-display font-semibold text-white text-2xl md:text-[28px] leading-none">
+                    {s.v}
+                  </span>
+                  <span className="mt-2 text-[10.5px] font-bold tracking-[0.2em] uppercase text-white/60">
+                    {s.l}
+                  </span>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>
