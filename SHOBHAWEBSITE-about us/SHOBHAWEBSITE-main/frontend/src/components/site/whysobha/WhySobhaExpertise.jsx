@@ -38,11 +38,11 @@ export default function WhySobhaExpertise() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left — visual */}
           <div className="lg:col-span-5 relative lg:sticky lg:top-28">
-            <div className="relative rounded-3xl overflow-hidden shadow-[0_30px_70px_rgba(7,56,166,0.18)] aspect-[4/5]">
+            <div className="relative rounded-3xl overflow-hidden shadow-[0_30px_70px_rgba(7,56,166,0.18)]">
               <img
                 src="/brand/Experties.png"
                 alt="Shobha Healthcare — expertise & foundation"
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain object-top"
                 onError={(e) => {
                   e.currentTarget.src = "/brand/hero-pharma.png";
                 }}
@@ -50,9 +50,7 @@ export default function WhySobhaExpertise() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#12233D]/55 via-transparent to-transparent" />
             </div>
 
-            {/* Floating chips */}
-            
-
+            {/* Floating chip */}
             <motion.div
               initial={{ opacity: 0, x: 14 }}
               whileInView={{ opacity: 1, x: 0 }}
