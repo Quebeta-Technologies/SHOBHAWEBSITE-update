@@ -21,7 +21,7 @@ export default function AboutHero() {
 
       <div className="container-x relative">
         {/* Main content row: text left, stats right */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16 py-10">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:gap-16 py-10">
           {/* Left: headline + subtext */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -61,10 +61,10 @@ export default function AboutHero() {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="mt-10 lg:mt-0 lg:flex-shrink-0 flex flex-col"
           >
-            {/* Breadcrumb sits above the stats, right-aligned */}
+            {/* Breadcrumb sits above the stats, right-aligned, vertically matched to eyebrow chip */}
             <nav
               aria-label="Breadcrumb"
-              className="flex items-center justify-end gap-1.5 text-[12px] text-white/65 mb-6"
+              className="flex items-center justify-end gap-1.5 text-[12px] text-white/65 mb-6 pt-[5px]"
             >
               <Link to="/" className="hover:text-white transition-colors">
                 Home
