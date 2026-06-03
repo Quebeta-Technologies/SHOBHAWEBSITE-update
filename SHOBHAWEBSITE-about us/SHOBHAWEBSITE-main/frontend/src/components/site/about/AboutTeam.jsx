@@ -65,9 +65,9 @@ const team = [
 ];
 
 const socialLinks = [
-  { key: "linkedin", Icon: LinkedInIcon, label: "LinkedIn" },
-  { key: "instagram", Icon: InstagramIcon, label: "Instagram" },
-  { key: "facebook", Icon: FacebookIcon, label: "Facebook" },
+  { key: "linkedin", Icon: LinkedInIcon, label: "LinkedIn", color: "#0A66C2" },
+  { key: "instagram", Icon: InstagramIcon, label: "Instagram", color: "#E1306C" },
+  { key: "facebook", Icon: FacebookIcon, label: "Facebook", color: "#1877F2" },
 ];
 
 export default function AboutTeam() {
@@ -162,7 +162,7 @@ export default function AboutTeam() {
                   {/* Social icons */}
                   {m.social && (
                     <div className="mt-5 pt-4 border-t border-[#E9EEF5] flex items-center gap-2">
-                      {socialLinks.map(({ key, Icon: SIcon, label }) =>
+                      {socialLinks.map(({ key, Icon: SIcon, label, color }) =>
                         m.social[key] ? (
                           <a
                             key={key}
@@ -170,18 +170,10 @@ export default function AboutTeam() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={label}
-                            className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+                            className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110 hover:opacity-85"
                             style={{
-                              backgroundColor: `${m.color}18`,
-                              color: m.color,
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.backgroundColor = m.color;
-                              e.currentTarget.style.color = "#fff";
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.backgroundColor = `${m.color}18`;
-                              e.currentTarget.style.color = m.color;
+                              backgroundColor: color,
+                              color: "#fff",
                             }}
                           >
                             <SIcon />
