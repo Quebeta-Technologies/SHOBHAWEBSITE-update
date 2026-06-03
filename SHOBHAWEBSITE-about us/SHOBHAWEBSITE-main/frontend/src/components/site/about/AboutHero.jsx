@@ -59,7 +59,7 @@ export default function AboutHero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.25 }}
-            className="mt-10 lg:mt-0 lg:flex-shrink-0 flex flex-col"
+            className="mt-10 lg:mt-0 lg:flex-shrink-0 flex flex-col lg:self-center"
           >
             {/* Breadcrumb sits above the stats, right-aligned, vertically matched to eyebrow chip */}
             <nav
@@ -81,7 +81,7 @@ export default function AboutHero() {
                 { v: "20+", l: "Years" },
               ].map((s) => (
                 <div key={s.l} className="flex flex-col">
-                  <span className="font-display font-semibold text-white text-2xl md:text-[28px] leading-none">
+                  <span className="font-display font-semibold text-white text-[36px] md:text-[44px] leading-none">
                     {s.v}
                   </span>
                   <span className="mt-2 text-[10.5px] font-bold tracking-[0.2em] uppercase text-white/60">
