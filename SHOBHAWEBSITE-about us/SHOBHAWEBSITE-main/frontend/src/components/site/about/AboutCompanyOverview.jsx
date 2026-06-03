@@ -54,11 +54,11 @@ export default function AboutCompanyOverview() {
           <div className="lg:col-span-5 relative lg:sticky lg:top-28">
             <div className="relative rounded-3xl overflow-hidden shadow-[0_30px_70px_rgba(7,56,166,0.18)] aspect-[4/3] lg:aspect-auto lg:h-full">
               <img
-                src="\brand\Shobha_392x400.png"
+                src="/brand/Whowe.png"
                 alt="Shobha Healthcare — manufacturing and global reach"
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.currentTarget.src = "/brand/Shobha about img.png";
+                  e.currentTarget.src = "/brand/Whowe.png";
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#12233D]/55 via-transparent to-transparent" />
