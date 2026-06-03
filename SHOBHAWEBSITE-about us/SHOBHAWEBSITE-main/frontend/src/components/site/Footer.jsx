@@ -55,28 +55,32 @@ export default function Footer() {
             healthcare systems across Africa, Asia, and the Middle East.
           </p>
 
-          <div className="mt-7 space-y-3 text-[13.5px]">
-            <div className="flex items-center gap-3">
-              <MapPin className="w-4 h-4 text-[#62C7F5]" />
-              <span>Dubai, United Arab Emirates</span>
+          {/* Contact info — single horizontal line */}
+          <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px]">
+            <div className="flex items-center gap-2">
+              <MapPin className="w-3.5 h-3.5 text-[#62C7F5] shrink-0" />
+              <span>Dubai, UAE</span>
             </div>
+            <span className="text-white/20">|</span>
             <a
               href="tel:+971585937521"
-              className="flex items-center gap-3 hover:text-white"
+              className="flex items-center gap-2 hover:text-white transition-colors"
             >
-              <Phone className="w-4 h-4 text-[#62C7F5]" />
+              <Phone className="w-3.5 h-3.5 text-[#62C7F5] shrink-0" />
               <span>+971 58 593 7521</span>
             </a>
+            <span className="text-white/20">|</span>
             <a
               href="mailto:admin@shobha-healthcare.com"
-              className="flex items-center gap-3 hover:text-white"
+              className="flex items-center gap-2 hover:text-white transition-colors"
             >
-              <Mail className="w-4 h-4 text-[#62C7F5]" />
+              <Mail className="w-3.5 h-3.5 text-[#62C7F5] shrink-0" />
               <span>admin@shobha-healthcare.com</span>
             </a>
-            <div className="flex items-center gap-3">
-              <Clock className="w-4 h-4 text-[#62C7F5]" />
-              <span>Monday – Friday · 9:00 AM – 6:00 PM</span>
+            <span className="text-white/20">|</span>
+            <div className="flex items-center gap-2">
+              <Clock className="w-3.5 h-3.5 text-[#62C7F5] shrink-0" />
+              <span>Mon–Fri · 9 AM – 6 PM</span>
             </div>
           </div>
         </div>
@@ -118,7 +122,6 @@ export default function Footer() {
             </span>
           </div>
         </div>
-        
       </div>
     </footer>
   );
