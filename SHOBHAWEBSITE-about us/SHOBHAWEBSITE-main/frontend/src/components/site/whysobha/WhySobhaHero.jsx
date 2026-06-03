@@ -81,8 +81,8 @@ export default function WhySobhaHero() {
                 {[
                   { v: "EU-GMP", l: "Certified" },
                   { v: "WHO-GMP", l: "Compliant" },
-                  { v: "15+", l: "Markets" },
-                  { v: "1 Day", l: "Response" },
+                  { v: "Recognition Ghana", l: "Health summit" },
+                  { v: "Reach 1850+", l: "Pharmacies" },
                 ].map((s) => (
                   <div key={s.l} className="flex flex-col">
                     <span className="font-display font-semibold text-white text-[26px] md:text-[32px] leading-none">
