@@ -355,7 +355,7 @@ const products = [
   {
     cat: "Injectables",
     tabKey: "Injectables",
-    name: "OMPRA-40mg",
+    name: "OMPRA-40 MG",
     spec: "Omeprazole Injection · 40mg Vial",
     desc: "Parenteral omeprazole for acid-peptic disorders in ICU and post-operative settings where oral therapy is not feasible.",
     color: "#C62828",
@@ -432,11 +432,11 @@ export default function ProductRange() {
   const [active, setActive] = useState("All Products");
   const [showAll, setShowAll] = useState(false);
 
+  // ── "Injectables" removed from this list so it now shows ──
   const hiddenCategories = [
     "Biologicals",
     "Biosimilars",
     "Anti Biotics",
-    "Injectables",
     "Cephalosporins",
   ];
 
